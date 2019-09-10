@@ -1,1 +1,0 @@
-rm -rf build && npm install && npm run build && mkdir build/partyiser && rsync -avr --exclude='build/partyiser' --remove-source-files build build/partyiser && rm -rf build/static
