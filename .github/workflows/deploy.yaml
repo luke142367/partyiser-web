@@ -10,7 +10,9 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: Build
-      run: sh convert.sh
+      run: npm run build
+    - name: Change
+      run: mkdir build/partyiser && rsync -avr --exclude='build/partyiser' --remove-source-files build build/partyiser && rm -rf build/static
     - name: Build and Deploy
       uses: JamesIves/github-pages-deploy-action@2.0.0
       env:
