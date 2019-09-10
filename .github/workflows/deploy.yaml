@@ -15,8 +15,8 @@ jobs:
         args: install
     - name: Build
       uses: actions/npm@1.0.0
-        with:
-          args: run build
+      with:
+        args: run build
     - name: GitHub Pages Deploy
       uses: maxheld83/ghpages@v0.2.1
       env:
