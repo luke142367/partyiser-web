@@ -18,7 +18,9 @@ jobs:
       with:
         args: run build
     - name: GitHub Pages Deploy
-      uses: maxheld83/ghpages@v0.2.1
+      uses: johno/actions-push-subdirectories@v0.0.1
       env:
-        BUILD_DIR: build/
-        GH_PAT: ${{ secrets.ACCESS_TOKEN }}
+        API_TOKEN_GITHUB: ${{ secrets.ACCESS_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        args: build luke142367 luke14236.github.io
