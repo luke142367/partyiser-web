@@ -51,10 +51,13 @@ const UploadForm: React.FunctionComponent<UploadFormProps> = (props) => {
                 <BarLoader loading={loading}  width={400} />
                 :
                 <button className="partyBtn" onClick={convertImage}>Partyise Image!</button>
-
               }
           </form>
-          { responseURL && <img alt="result" id="resultImg" src={responseURL}/> }
+          { responseURL && 
+          <a href={responseURL + '?download=true'} download='party.gif'>
+            <img alt="result" id="resultImg" src={responseURL}/> 
+          </a>
+          }
 
       </div>
   );
