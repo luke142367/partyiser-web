@@ -46,15 +46,30 @@
 
 .form {
     width: 400px;
-    height: 300px;
+    height: 230px;
     margin: auto;
 }
 
 .partyBtn {
-    margin-top:25px;
+    margin-top:20px;
+}
+
+.centreWidth p {
+    display: inline;
+}
+
+.centreWidth {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.centreColour {
+    width: 225px;
+    margin: 10px auto;
 }
 
 #resultImg {
     max-width: 90%;
-    max-height: 480px;
+    max-height: 300px;
+    margin-top: 10px;
 }
