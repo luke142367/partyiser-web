@@ -1,18 +1,15 @@
 import * as React from 'react';
 import './UploadForm.css'
 import { BarLoader } from 'react-spinners';
-import { ChromePicker, ColorChangeHandler, ColorResult } from 'react-color';
 
-interface UploadFormProps {
-}
+interface UploadFormProps {}
 
 const UploadForm: React.FunctionComponent<UploadFormProps> = (props) => {
 
   const [image, setImage] = React.useState<File>()
   const [responseURL, setResponseURL] = React.useState<string>('')
   const [loading, setLoading] = React.useState<boolean>(false)
-  const [showTrans, setShowTrans] = React.useState<boolean>(false)
-  const [transColour, setTransColour] = React.useState<ColorResult>()
+  const [trans, setTrans] = React.useState<boolean>(false)
 
   const changeImage = (e:React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files.length > 0){
@@ -29,20 +26,14 @@ const UploadForm: React.FunctionComponent<UploadFormProps> = (props) => {
   }
 
   const check = (e : React.ChangeEvent<HTMLInputElement>) => {
-    setShowTrans(trans => !trans) 
-  }
-
-  const setColour : ColorChangeHandler = (c) => {
-    setTransColour(c)
+    setTrans(trans => !trans) 
   }
 
   const sendConvertRequest = (image: File) => {
     const data = new FormData()
     data.append('image', image)
     let url = 'https://partyiser-api.herokuapp.com/convert'
-    if (showTrans && transColour) {
-      url += '?trans=' + transColour.hex
-    }
+    url += '?trans=' + trans
     fetch(url, {
       method: 'POST',
       body: data
@@ -64,12 +55,7 @@ const UploadForm: React.FunctionComponent<UploadFormProps> = (props) => {
           </form>
           <div className='centreWidth'>
             <p>Transparency</p>
-            <input type="checkbox" onChange={check} checked={showTrans}/>
-            {showTrans && 
-              <div className='centreColour'>
-                <ChromePicker onChangeComplete={setColour} color={transColour ? transColour.hex : '#00000000'}/>
-              </div>
-            }
+            <input type="checkbox" onChange={check} checked={trans}/>
             <br></br>
             {
               loading ?
