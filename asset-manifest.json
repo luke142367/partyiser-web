@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/partyiser-web/static/css/main.a9eacb38.chunk.css",
+    "main.js": "/partyiser-web/static/js/main.155e7d59.chunk.js",
+    "main.js.map": "/partyiser-web/static/js/main.155e7d59.chunk.js.map",
+    "runtime~main.js": "/partyiser-web/static/js/runtime~main.31f61fd7.js",
+    "runtime~main.js.map": "/partyiser-web/static/js/runtime~main.31f61fd7.js.map",
+    "static/js/2.41cd56f7.chunk.js": "/partyiser-web/static/js/2.41cd56f7.chunk.js",
+    "static/js/2.41cd56f7.chunk.js.map": "/partyiser-web/static/js/2.41cd56f7.chunk.js.map",
+    "index.html": "/partyiser-web/index.html",
+    "precache-manifest.6ab3c463107387130ab17e41069efd0f.js": "/partyiser-web/precache-manifest.6ab3c463107387130ab17e41069efd0f.js",
+    "service-worker.js": "/partyiser-web/service-worker.js",
+    "static/css/main.a9eacb38.chunk.css.map": "/partyiser-web/static/css/main.a9eacb38.chunk.css.map"
+  }
+}
